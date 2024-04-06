@@ -2,6 +2,87 @@
 <html>
 <head>
  <title>Определение знака зодиака</title>
+ <style>
+ body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  color: #333;
+}
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="text"], input[type="submit"] {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border-radius: 4px;
+  border: 1px solid #badbcc;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+
+.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+ </style>
 </head>
 <body>
  <form method="post">
@@ -41,12 +122,15 @@
   }
 
   if ($zodiac) {
-   echo "Знак зодиака для даты {$dateStr} - {$zodiac}";
+   
+    echo "<div class='result success'>Знак зодиака для даты {$dateStr} - {$zodiac}</div>";
   } else {
-   echo "Не удалось определить знак зодиака для даты {$dateStr}";
+  
+    echo "<div class='result error'>Не удалось определить знак зодиака для даты {$dateStr}</div>";
   }
  }
  ?>
 </body>
 </html>
+
 
